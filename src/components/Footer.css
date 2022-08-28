@@ -1,0 +1,12 @@
+footer {
+  background-color: var(--text-bg);
+  text-align: center;
+  padding: 3rem 0;
+  /* align-items: center; */
+  /* height: 250px; */
+}
+footer > p {
+  color: var(--text-prm);
+  font-size: 20px;
+  font-weight: 500;
+}

@@ -1,0 +1,26 @@
+.nav-section {
+  display: flex;
+}
+.nav {
+  background-color: var(--text-bg);
+  height: 100vh;
+  flex: 1 1;
+  color: var(--text-prm);
+}
+.nav-section > div {
+  flex: 5 1;
+  padding: 0 20px;
+}
+.nav-wrapper {
+  padding: 0 2rem;
+}
+.nav-wrapper > p:hover {
+  color: var(--text-hover);
+}
+
+.nav-wrapper > h1 {
+  font-size: 1.5rem;
+}
+.nav-wrapper > h1 > span {
+  color: var(--text-hover);
+}

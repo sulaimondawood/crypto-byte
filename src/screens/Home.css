@@ -1,0 +1,19 @@
+/* .home-top {
+} */
+.home-top > h1 {
+  font-size: 2rem;
+  color: var(--text-prm);
+}
+.home-top > .top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home-top > .top-row p:nth-child(1) {
+  color: var(--text-prm);
+  font-size: 14px;
+}
+.home-top > .top-row p:nth-child(2) {
+  color: var(--text-prm);
+  font-size: 1.2rem;
+}
