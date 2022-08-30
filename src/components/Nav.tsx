@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import "./Nav.css";
 import "../features/cryptoApi";
+import { NavLink } from "react-router-dom";
 const Nav: React.FunctionComponent = () => {
   return (
     <>
@@ -12,15 +13,28 @@ const Nav: React.FunctionComponent = () => {
             <h1>
               Crypto <span>Byte</span>
             </h1>
-            <p>Home</p>
-            <p>Exchanges</p>
-            <p>Cryptocurrencies</p>
-            <p>News</p>
+            <div className="nav-links-container">
+              <NavLink className="nav-link" to="/">
+                Home
+              </NavLink>
+              <NavLink className="nav-link" to="/exhanges">
+                Exchanges
+              </NavLink>
+              <NavLink className="nav-link" to="/cryptocurrencies">
+                Cryptocurrencies
+              </NavLink>
+              <NavLink className="nav-link" to="/news">
+                News
+              </NavLink>
+            </div>
           </nav>
         </aside>
+        <aside className="crypto-news"></aside>
 
         <div>
-          <Outlet />
+          <div className="outlet">
+            <Outlet />
+          </div>
           <Footer />
         </div>
       </section>

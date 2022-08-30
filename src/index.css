@@ -12,3 +12,18 @@ body {
   --text-hover: #d5dff8;
   --card-bg: #fffaff;
 }
+.spinner {
+  width: 50px;
+  margin: 50px auto;
+  display: block;
+  animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

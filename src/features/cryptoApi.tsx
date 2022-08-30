@@ -1,24 +1,57 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { stat } from "fs";
 
 export const getCoins = createAsyncThunk("crypto/cryptoSlice", async () => {
   try {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/");
     const data = res.json();
-    console.log(data);
+
     return data;
   } catch (error) {}
 });
 export const getGlobalInfo = createAsyncThunk("crypto/getGlobal", async () => {
   try {
-    const res = await fetch("https://api.coingecko.com/api/v3/exchanges");
+    const res = await fetch("https://api.coingecko.com/api/v3/global");
     const data = res.json();
     return data;
   } catch (error) {}
 });
 
-const initialState: { coins: any[]; globalInfo: any[]; isLoading: boolean } = {
+export const getCoinsTrending = createAsyncThunk("crypto/trends", async () => {
+  try {
+    const res = await fetch("https://api.coingecko.com/api/v3/search/trending");
+    const data = res.json();
+    return data;
+  } catch (error) {}
+});
+
+// export const getCryptoNews = createAsyncThunk("crypto/CryptoNews", async () => {
+//   try {
+//     const options = {
+//       method: "GET",
+//       headers: {
+//         "X-RapidAPI-Key": "cff05d5567msh00c9f291616096ep10c6b0jsn8b1c093fa5eb",
+//         "X-RapidAPI-Host": "crypto-news-live3.p.rapidapi.com",
+//       },
+//     };
+
+//     const res = await fetch(
+//       "https://crypto-news-live3.p.rapidapi.com/news",
+//       options
+//     );
+//     const data = res.json();
+//     return data;
+//   } catch (error) {}
+// });
+const initialState: {
+  coins: any[];
+  trends: any[];
+  globalInfo: any[];
+  isLoading: boolean;
+} = {
   coins: [],
   globalInfo: [],
+  trends: [],
   isLoading: true,
 };
 
@@ -50,6 +83,16 @@ const cryptoSlice = createSlice({
     builder.addCase(getGlobalInfo.rejected, (state: any, action) => {
       state.isLoading = false;
       state.globalInfo = action.payload;
+    });
+    builder.addCase(getCoinsTrending.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getCoinsTrending.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.trends = payload;
+    });
+    builder.addCase(getCoinsTrending.rejected, (state, { payload }) => {
+      state.isLoading = false;
     });
   },
 });

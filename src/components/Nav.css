@@ -1,20 +1,28 @@
 .nav-section {
   display: flex;
+  position: relative;
 }
 .nav {
   background-color: var(--text-bg);
   height: 100vh;
+  position: fixed;
+  /* width: 250px; */
+  /* position: sticky; */
+  top: 0;
   flex: 1 1;
   color: var(--text-prm);
 }
 .nav-section > div {
   flex: 5 1;
-  padding: 0 20px;
+  /* padding: 0 0px; */
+}
+.nav-section > div .outlet {
+  padding-left: 250px;
 }
 .nav-wrapper {
   padding: 0 2rem;
 }
-.nav-wrapper > p:hover {
+.nav-wrapper > div .nav-link:hover {
   color: var(--text-hover);
 }
 
@@ -23,4 +31,19 @@
 }
 .nav-wrapper > h1 > span {
   color: var(--text-hover);
+}
+.nav-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.nav-links-container .nav-link {
+  color: var(--text-prm);
+  text-decoration: none;
+}
+.active {
+  background-color: var(--text-hover-bg);
+  color: var(--text-hover);
+  padding: 0.5em;
+  border-radius: 8px;
 }

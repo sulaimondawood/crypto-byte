@@ -8,8 +8,15 @@ import Cryptocurrencies from "./screens/Cryptocurrencies";
 import Exchanges from "./screens/Exchanges";
 import News from "./screens/News";
 import Nav from "./components/Nav";
-import { getCoins, getGlobalInfo } from "./features/cryptoApi";
+import {
+  getCoins,
+  getCoinsTrending,
+  getGlobalInfo,
+} from "./features/cryptoApi";
 import { useEffect } from "react";
+import { getCryptoNews } from "./features/cryptoNews";
+import CryptoDetails from "./screens/CryptoDetails";
+import { getCoinsList } from "./features/cryptoCurrencies";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +24,9 @@ function App() {
   useEffect(() => {
     dispatch<any>(getGlobalInfo());
     dispatch<any>(getCoins());
+    dispatch<any>(getCoinsTrending());
+    dispatch<any>(getCryptoNews());
+    dispatch<any>(getCoinsList());
   }, []);
   return (
     <main className="App">
@@ -27,6 +37,10 @@ function App() {
             <Route path="cryptocurrencies" element={<Cryptocurrencies />} />
             <Route path="/exhanges" element={<Exchanges />} />
             <Route path="news" element={<News />} />
+            <Route
+              path="cryptocurrency/:cryptoId"
+              element={<CryptoDetails />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
