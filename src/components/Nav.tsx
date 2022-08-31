@@ -29,7 +29,6 @@ const Nav: React.FunctionComponent = () => {
             </div>
           </nav>
         </aside>
-        <aside className="crypto-news"></aside>
 
         <div>
           <div className="outlet">

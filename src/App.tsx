@@ -8,21 +8,21 @@ import Cryptocurrencies from "./screens/Cryptocurrencies";
 import Exchanges from "./screens/Exchanges";
 import News from "./screens/News";
 import Nav from "./components/Nav";
-import {
-  getCoins,
-  getCoinsTrending,
-  getGlobalInfo,
-} from "./features/cryptoApi";
+import { getCoins, getCoinsTrending } from "./features/cryptoApi";
 import { useEffect } from "react";
 import { getCryptoNews } from "./features/cryptoNews";
+import { getExchanges } from "./features/cryptoExchanges";
+
 import CryptoDetails from "./screens/CryptoDetails";
 import { getCoinsList } from "./features/cryptoCurrencies";
+import { getGlobalInfo } from "./features/cryptoGlobal";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch<any>(getGlobalInfo());
+    dispatch<any>(getExchanges());
     dispatch<any>(getCoins());
     dispatch<any>(getCoinsTrending());
     dispatch<any>(getCryptoNews());

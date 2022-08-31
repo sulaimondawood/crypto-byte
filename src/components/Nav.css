@@ -1,15 +1,16 @@
 .nav-section {
   display: flex;
   position: relative;
+  max-width: 1440px;
 }
 .nav {
   background-color: var(--text-bg);
   height: 100vh;
-  position: fixed;
+  /* position: fixed; */
   /* width: 250px; */
-  /* position: sticky; */
+  position: sticky;
   top: 0;
-  flex: 1 1;
+  flex: 1.3 1;
   color: var(--text-prm);
 }
 .nav-section > div {
@@ -17,7 +18,9 @@
   /* padding: 0 0px; */
 }
 .nav-section > div .outlet {
-  padding-left: 250px;
+  /* padding-left: 250px; */
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .nav-wrapper {
   padding: 0 2rem;

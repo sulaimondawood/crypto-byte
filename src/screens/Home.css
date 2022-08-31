@@ -3,6 +3,7 @@
 .home-top > h1 {
   font-size: 2rem;
   color: var(--text-prm);
+  font-weight: 700;
 }
 .home-top > .top-row {
   display: grid;
@@ -11,6 +12,7 @@
 
 .home-top > .top-row p:nth-child(1) {
   color: var(--text-prm);
+  font-weight: 600;
   font-size: 14px;
 }
 .home-top > .top-row p:nth-child(2) {
@@ -20,6 +22,7 @@
 .home-section > article > h1 {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--text-prm);
 }
 .home-section > article > ol {
   display: grid;
@@ -65,6 +68,7 @@
 .trends > h1 {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--text-prm);
 }
 .trends-container {
   display: grid;

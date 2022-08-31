@@ -1,0 +1,28 @@
+.currency article {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+}
+.currency article div:hover {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  box-shadow: 0 5px 10px #00000020;
+  transition: all 0.3s;
+}
+.currency article div:hover .link {
+  color: var(--text-prm);
+}
+.currency article div {
+  text-align: center;
+  max-width: 200px;
+  width: 80%;
+}
+.currency article div p span:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.currency article div p span:nth-child(2) {
+  /* font-weight: 600; */
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}

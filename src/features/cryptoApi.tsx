@@ -9,13 +9,6 @@ export const getCoins = createAsyncThunk("crypto/cryptoSlice", async () => {
     return data;
   } catch (error) {}
 });
-export const getGlobalInfo = createAsyncThunk("crypto/getGlobal", async () => {
-  try {
-    const res = await fetch("https://api.coingecko.com/api/v3/global");
-    const data = res.json();
-    return data;
-  } catch (error) {}
-});
 
 export const getCoinsTrending = createAsyncThunk("crypto/trends", async () => {
   try {
@@ -46,11 +39,9 @@ export const getCoinsTrending = createAsyncThunk("crypto/trends", async () => {
 const initialState: {
   coins: any[];
   trends: any[];
-  globalInfo: any[];
   isLoading: boolean;
 } = {
   coins: [],
-  globalInfo: [],
   trends: [],
   isLoading: true,
 };
@@ -71,19 +62,7 @@ const cryptoSlice = createSlice({
     builder.addCase(getCoins.rejected, (state, action) => {
       state.isLoading = false;
     });
-    builder.addCase(getGlobalInfo.fulfilled, (state, action: any) => {
-      // console.log(action);
-      state.globalInfo = action.payload;
-      state.isLoading = false;
-    });
-    builder.addCase(getGlobalInfo.pending, (state: any, action) => {
-      state.isLoading = true;
-      state.globalInfo = action.payload;
-    });
-    builder.addCase(getGlobalInfo.rejected, (state: any, action) => {
-      state.isLoading = false;
-      state.globalInfo = action.payload;
-    });
+
     builder.addCase(getCoinsTrending.pending, (state, action) => {
       state.isLoading = true;
     });

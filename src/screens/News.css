@@ -1,0 +1,11 @@
+.news-section {
+  margin-top: 50px;
+}
+.news-section > h1 {
+  font-size: 2rem;
+}
+.new-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}

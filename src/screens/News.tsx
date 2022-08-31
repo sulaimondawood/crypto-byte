@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 import "./News.css";
-import Spinner from "../assets/spinner.png";
+import Loader from "../components/Spinner";
 const News = () => {
   const { isCryptoNewsLoading } = useSelector((state: any) => state.cryptoNews);
   const { data: news } = useSelector((state: any) => state.cryptoNews);
 
   if (isCryptoNewsLoading) {
-    return <img className="spinner" src={Spinner} alt="" />;
+    <Loader />;
   }
   return (
     <section className="news-section">
