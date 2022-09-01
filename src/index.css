@@ -7,6 +7,7 @@ body {
 
 :root {
   --text-prm: #474954;
+  --text-prm-1: #a3a6b1;
   --text-bg: #0c090d;
   --text-hover-bg: #5cc8ff;
   --text-hover: #d5dff8;
@@ -17,6 +18,11 @@ body {
   margin: 50px auto;
   display: block;
   animation: spinner 2s linear infinite;
+}
+@media screen and (max-width: 768px) {
+  .spinner {
+    width: 20px;
+  }
 }
 
 @keyframes spinner {

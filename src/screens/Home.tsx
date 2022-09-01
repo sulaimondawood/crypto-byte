@@ -54,11 +54,15 @@ const Home = () => {
           </div>
           <div>
             <p className="total-assets">BTC Total Market Cap</p>
-            <p className="total-assets-num">${total_market_cap.btc}</p>
+            <p className="total-assets-num">
+              ${total_market_cap.btc.toFixed(1)}B
+            </p>
           </div>
           <div>
             <p className="total-assets">BTC Total 24h Volume</p>
-            <p className="total-assets-num">${total_market_cap.btc}</p>
+            <p className="total-assets-num">
+              ${total_market_cap.btc.toFixed(1)}B
+            </p>
           </div>
           <div>
             <p className="total-assets">Total Markets</p>

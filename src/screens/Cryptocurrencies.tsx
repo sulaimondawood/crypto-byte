@@ -10,6 +10,11 @@ interface IData {
   image: {
     small: string;
   };
+  market_data: {
+    price_change_24h: number;
+    market_cap_change_24h: number;
+    price_change_percentage_24h: number;
+  };
 }
 
 const Cryptocurrencies = () => {
@@ -22,13 +27,26 @@ const Cryptocurrencies = () => {
     <section className="currency">
       <article>
         {data.map((dat: IData) => {
-          const { symbol, name, id } = dat;
+          const { symbol, name, id, market_data } = dat;
+          const {
+            price_change_24h,
+            market_cap_change_24h,
+            price_change_percentage_24h,
+          } = market_data;
 
           return (
             <div key={dat.id}>
-              <img src={dat.image.small} alt="" />
-              <p className="name">{dat.name}</p>
-              <p className="symbol">{dat.symbol}</p>
+              <div className="img-name">
+                <img src={dat.image.small} alt="" />
+                <p className="name">{dat.name}</p>
+                <p className="symbol">{dat.symbol}</p>
+              </div>
+              <p className="daily">Daily Change:{price_change_24h}</p>
+              {/* <p className="daily">{price_change_24h}</p> */}
+              <p className="daily">
+                Market Change:{market_cap_change_24h.toFixed(1)}
+              </p>
+
               <Link
                 target="_blank"
                 className="link"

@@ -1,5 +1,5 @@
 .news-section {
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .news-section > h1 {
   font-size: 2rem;
@@ -8,4 +8,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .new-row {
+    grid-template-columns: 1fr;
+  }
 }
