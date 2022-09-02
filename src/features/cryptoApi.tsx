@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { stat } from "fs";
 
 export const getCoins = createAsyncThunk("crypto/cryptoSlice", async () => {
   try {
@@ -18,24 +17,6 @@ export const getCoinsTrending = createAsyncThunk("crypto/trends", async () => {
   } catch (error) {}
 });
 
-// export const getCryptoNews = createAsyncThunk("crypto/CryptoNews", async () => {
-//   try {
-//     const options = {
-//       method: "GET",
-//       headers: {
-//         "X-RapidAPI-Key": "cff05d5567msh00c9f291616096ep10c6b0jsn8b1c093fa5eb",
-//         "X-RapidAPI-Host": "crypto-news-live3.p.rapidapi.com",
-//       },
-//     };
-
-//     const res = await fetch(
-//       "https://crypto-news-live3.p.rapidapi.com/news",
-//       options
-//     );
-//     const data = res.json();
-//     return data;
-//   } catch (error) {}
-// });
 const initialState: {
   coins: any[];
   trends: any[];

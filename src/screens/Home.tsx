@@ -93,7 +93,7 @@ const Home = () => {
                     <span className="symbol">{trend?.item?.symbol}</span>
                   </p>
                   <img src={trend?.item?.small} alt="" />
-                  <p>Market Cap Rank :{trend?.item?.market_cap_rank}</p>
+                  <p>Market Cap Rank : {trend?.item?.market_cap_rank}</p>
                   <p className="price">{trend?.item?.price_btc.toFixed(8)}$B</p>
                 </div>
               );

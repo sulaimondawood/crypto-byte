@@ -30,7 +30,11 @@ const Nav: React.FunctionComponent = () => {
                   : "nav-links-container"
               }
             >
-              <NavLink className="nav-link" to="/">
+              <NavLink
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="nav-link"
+                to="/"
+              >
                 Home
               </NavLink>
               <NavLink
