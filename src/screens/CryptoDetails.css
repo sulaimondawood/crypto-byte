@@ -204,6 +204,7 @@
     margin-top: 80px;
   }
   .about-coin p {
+    overflow: hidden;
     color: var(--text-prm);
     font-size: 12px;
     width: 90%;
